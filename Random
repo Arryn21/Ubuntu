@@ -1,0 +1,28 @@
+ifconfig - to check IP address
+
+net-tools - package name for ifconfig command
+network-manager - package name for nmtui command
+
+networking service in ubuntu : systemd-networkd
+
+sudo apt-get update
+sudo apt-get install apache2 ;for hosting webpage
+
+ubuntu@ip-172-31-13-224:/etc/netplan$ cat 50-cloud-init.yaml
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    ethernets:
+        eth0:
+            dhcp4: true
+            dhcp6: false
+            match:
+                macaddress: 0a:24:b7:f9:b8:bb
+            set-name: eth0
+    version: 2
+
+ufw : uncomplicated firewall
+
